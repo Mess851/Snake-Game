@@ -1,6 +1,10 @@
 # Snake-Game
 
-Snake
+Este juego fue elaborado por:
+Ernesto Misael Silva Muñoz 22310168
+Harold Galaviz Bañuelos 22310176
+
+##Snake
 ¿Qué es el juego de Snake?
 El juego de Snake es un clásico juego de arcade que se originó en la década de 1970. Fue popularizado por los teléfonos móviles Nokia en la década de 1990. El objetivo principal es controlar una serpiente en constante crecimiento dentro de un espacio limitado.
 
