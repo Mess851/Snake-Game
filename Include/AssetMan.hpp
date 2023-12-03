@@ -20,7 +20,7 @@ namespace Engine
         AssetMan() {}
         ~AssetMan() {}
 
-        void AddTexture(int id, const std::string& filePath, bool isRepated = false);
+        void AddTexture(int id, const std::string& filePath, bool wantRepated = false);
         void AddFont(int id, const std::string &filePath);
         
         const sf::Texture &GetTexture(int id) const;

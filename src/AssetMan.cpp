@@ -36,5 +36,5 @@ const sf::Texture &Engine::AssetMan::GetTexture(int id) const
 const sf::Font &Engine::AssetMan::GetFont(int id) const
 {
     return *(m_fonts.at(id).get());
-
+    
 }
