@@ -6,7 +6,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 
-class MainMenu : public Engine::State 
+class MainMenu : public Engine::State
 {
 private:
     std::shared_ptr<Context> m_context;
@@ -16,17 +16,16 @@ private:
 
     bool m_isPlayButtonSelected;
     bool m_isPlayButtonPressed;
-    
+
     bool m_isExitButtonSelected;
     bool m_isExitButtonPressed;
 
-
 public:
-    MainMenu(std::shared_ptr<Context>& context);
+    MainMenu(std::shared_ptr<Context> &context);
     ~MainMenu();
 
     void Init() override;
     void ProcessInput() override;
-    void Update(const sf::Time& deltaTime) override;
+    void Update(const sf::Time &deltaTime) override;
     void Draw() override;
 };

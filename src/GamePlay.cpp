@@ -50,8 +50,9 @@ void GamePlay::Init()
     m_snake.Init(m_context->m_assets->GetTexture(SNAKE));
 
     m_scoreText.setFont(m_context->m_assets->GetFont(MAIN_FONT));
-    m_scoreText.setString("Score : " + std::to_string(m_score));
+    m_scoreText.setString("Score :  " + std::to_string(m_score));
     m_scoreText.setCharacterSize(15);
+    m_scoreText.setFillColor(sf::Color::Magenta);
 }
 
 void GamePlay::ProcessInput()

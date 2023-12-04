@@ -28,16 +28,16 @@ struct Context
         m_states = std::make_unique<Engine::StateMan>();
         m_window = std::make_unique<sf::RenderWindow>();
     }
-
 };
 
 class Game
 {
-public : 
+public:
     Game();
     ~Game();
     void Run();
+
 private:
     std::shared_ptr<Context> m_context;
-    const sf::Time TIME_PER_FRAME = sf::seconds(1.f/60.f);
+    const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 };

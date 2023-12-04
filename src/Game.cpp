@@ -42,6 +42,5 @@ void Game::Run()
                 m_context->m_window->close();
             }
         }
-    
-    }
+        }
 }

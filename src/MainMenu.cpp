@@ -10,14 +10,14 @@ MainMenu::MainMenu(std::shared_ptr<Context> &context)
 {
 }
 
-MainMenu::~MainMenu() 
+MainMenu::~MainMenu()
 {
 }
 
 void MainMenu::Init()
 {
     m_context->m_assets->AddFont(MAIN_FONT, "assets/fonts/RubikBubbles-Regular.ttf");
-    
+
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
     m_gameTitle.setString("Snake Game");
@@ -25,25 +25,24 @@ void MainMenu::Init()
                           m_gameTitle.getLocalBounds().height / 2);
     m_gameTitle.setPosition(m_context->m_window->getSize().x / 2,
                             m_context->m_window->getSize().y / 2 - 150.f);
-    
+
     // Play Button
     m_playButton.setFont(m_context->m_assets->GetFont(MAIN_FONT));
     m_playButton.setString("Play");
     m_playButton.setOrigin(m_playButton.getLocalBounds().width / 2,
-                          m_playButton.getLocalBounds().height / 2);
+                           m_playButton.getLocalBounds().height / 2);
     m_playButton.setPosition(m_context->m_window->getSize().x / 2,
-                            m_context->m_window->getSize().y / 2 - 25.f);
+                             m_context->m_window->getSize().y / 2 - 25.f);
     m_playButton.setCharacterSize(20);
-    
+
     // Exit Button
     m_exitButton.setFont(m_context->m_assets->GetFont(MAIN_FONT));
     m_exitButton.setString("Exit");
     m_exitButton.setOrigin(m_exitButton.getLocalBounds().width / 2,
-                          m_exitButton.getLocalBounds().height / 2);
+                           m_exitButton.getLocalBounds().height / 2);
     m_exitButton.setPosition(m_context->m_window->getSize().x / 2,
-                            m_context->m_window->getSize().y / 2 + 25.f);
+                             m_context->m_window->getSize().y / 2 + 25.f);
     m_exitButton.setCharacterSize(20);
-    
 }
 void MainMenu::ProcessInput()
 {
@@ -53,15 +52,14 @@ void MainMenu::ProcessInput()
         if (event.type == sf::Event::Closed)
         {
             m_context->m_states->PopAll();
-            
         }
-        else if(event.type == sf::Event::KeyPressed)
+        else if (event.type == sf::Event::KeyPressed)
         {
             switch (event.key.code)
             {
             case sf::Keyboard::Up:
             {
-                if(!m_isPlayButtonSelected)
+                if (!m_isPlayButtonSelected)
                 {
                     m_isPlayButtonSelected = true;
                     m_isExitButtonSelected = false;
@@ -69,20 +67,20 @@ void MainMenu::ProcessInput()
                 break;
             }
             case sf::Keyboard::Down:
-            {   
-                if(!m_isExitButtonSelected)
+            {
+                if (!m_isExitButtonSelected)
                 {
                     m_isPlayButtonSelected = false;
                     m_isExitButtonSelected = true;
-                } 
+                }
                 break;
             }
             case sf::Keyboard::Return:
-            {   
+            {
                 m_isPlayButtonPressed = false;
                 m_isExitButtonPressed = false;
 
-                if(m_isPlayButtonSelected)
+                if (m_isPlayButtonSelected)
                 {
                     m_isPlayButtonPressed = true;
                 }
@@ -100,26 +98,24 @@ void MainMenu::ProcessInput()
         }
     }
 }
-void MainMenu::Update(const sf::Time& deltaTime)
+void MainMenu::Update(const sf::Time &deltaTime)
 {
-    if(m_isPlayButtonSelected)
+    if (m_isPlayButtonSelected)
     {
         m_playButton.setFillColor(sf::Color::Black);
         m_exitButton.setFillColor(sf::Color::White);
-
     }
     else
     {
         m_exitButton.setFillColor(sf::Color::Black);
         m_playButton.setFillColor(sf::Color::White);
-
     }
 
-    if(m_isPlayButtonPressed)
+    if (m_isPlayButtonPressed)
     {
         m_context->m_states->Add(std::make_unique<GamePlay>(m_context), true);
     }
-    else if(m_isExitButtonPressed)
+    else if (m_isExitButtonPressed)
     {
         m_context->m_window->close();
     }
