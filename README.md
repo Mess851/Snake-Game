@@ -38,7 +38,7 @@ Una vez instalado es necesario agregar los siguientes directorios al path de win
 > C:\msys64\usr\bin
 
 ### Github Desktop
-Puedes utilizar Github Desktop para clonar el repositorio o bien descargarlo desde el navegador[GithubDesktop]:https://desktop.github.com/
+Puedes utilizar Github Desktop para clonar el repositorio o bien descargarlo desde el navegador[GithubDesktop](https://desktop.github.com/)
 
 
 ## Librerias Utilizadas (Msys2)
