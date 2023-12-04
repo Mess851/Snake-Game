@@ -14,7 +14,7 @@ GamePlay::~GamePlay()
 void GamePlay::Init()
 {
     m_context->m_assets->AddTexture(GRASS, "assets/textures/Pasto.png", true);
-    m_context->m_assets->AddTexture(FOOD, "assets/textures/food.png");
+    m_context->m_assets->AddTexture(FOOD, "assets/textures/Comida.png");
     m_context->m_assets->AddTexture(WALL, "assets/textures/Muro.png", true);
     m_context->m_assets->AddTexture(SNAKE, "assets/textures/Serpiente.png");
 
