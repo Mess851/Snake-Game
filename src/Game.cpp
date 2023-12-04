@@ -5,7 +5,7 @@
 
 Game::Game() : m_context(std::make_shared<Context>())
 {
-    m_context->m_window->create(sf::VideoMode(640, 360), "SFML works!", sf::Style::Close);
+    m_context->m_window->create(sf::VideoMode(640, 360), "Snake Game", sf::Style::Close);
     m_context->m_states->Add(std::make_unique<MainMenu>(m_context));
 }
 
@@ -30,12 +30,18 @@ void Game::Run()
             timeSinceLastFrame -= TIME_PER_FRAME;
 
             m_context->m_states->ProcessStateChange();
-            m_context->m_states->GetCurrent()->ProcessInput();
-            m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
-            m_context->m_states->GetCurrent()->Draw();
+
+            if (!m_context->m_states->IsEmpty())
+            {
+                m_context->m_states->GetCurrent()->ProcessInput();
+                m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
+                m_context->m_states->GetCurrent()->Draw();
+            }
+            else
+            {
+                m_context->m_window->close();
+            }
         }
-           
-        
-    }
     
+    }
 }
