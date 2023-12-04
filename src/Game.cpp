@@ -5,7 +5,7 @@
 
 Game::Game() : m_context(std::make_shared<Context>())
 {
-    m_context->m_window->create(sf::VideoMode(200, 200), "SFML works!", sf::Style::Close);
+    m_context->m_window->create(sf::Videomode(), "SFML works!", sf::Style::Close);
 }
 
 Game::~Game()
@@ -19,8 +19,10 @@ void Game::Run()
 
     while (m_context->m_window->isOpen())
     {
+        
+
         sf::Event event;
-        while (m_context->m_window->pollEvent(event))
+        while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
                 m_context->m_window->close();
