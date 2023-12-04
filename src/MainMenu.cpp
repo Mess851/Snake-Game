@@ -8,16 +8,15 @@ MainMenu::MainMenu(std::shared_ptr<Context> &context)
       m_isPlayButtonPressed(false), m_isExitButtonSelected(false),
       m_isExitButtonPressed(false)
 {
-
 }
 
-MainMenu::~MainMenu() {
-
+MainMenu::~MainMenu() 
+{
 }
 
 void MainMenu::Init()
 {
-    m_context->m_assets->AddFont(MAIN_FONT, "assets/fonts/RubikBubbles-Regular.ttf");
+    m_context->m_assets->AddFont(MAIN_FONT, "assets/fonts/Pacifico-Regular.ttf");
     
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
@@ -53,7 +52,8 @@ void MainMenu::ProcessInput()
     {
         if (event.type == sf::Event::Closed)
         {
-            m_context->m_window->close();
+            m_context->m_states->PopAll();
+            
         }
         else if(event.type == sf::Event::KeyPressed)
         {
@@ -100,7 +100,7 @@ void MainMenu::ProcessInput()
         }
     }
 }
-void MainMenu::Update(sf::Time deltaTime)
+void MainMenu::Update(const sf::Time& deltaTime)
 {
     if(m_isPlayButtonSelected)
     {
