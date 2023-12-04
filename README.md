@@ -24,10 +24,10 @@ Para ejecutar el juego basta con escrbir dentro de la terminal de VScode:
 ## Programas necesarios
 
 ### Visual estudio code
-Descargar e instalar vscode en el soguiente enlace[Vscode.](https://code.visualstudio.com/)
+Descargar e instalar vscode en el soguiente enlace [Vscode.](https://code.visualstudio.com/)
 
 ### MSYS2 (Window)
-Instalar Msys2 usando el siguiente enlace [MSYS2(Windows)]:https://github.com/msys2/msys2-installer/releases/download/2023-05-26/msys2-x86_64-20230526.exe
+Instalar Msys2 usando el siguiente enlace [MSYS2(Windows)](https://github.com/msys2/msys2-installer/releases/download/2023-05-26/msys2-x86_64-20230526.exe)
 
 No modificar ninguna opcion al momento de instalacion o podrian variar las configuraciones.
 
