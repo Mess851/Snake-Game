@@ -7,6 +7,11 @@
 #include "AssetMan.hpp"
 #include "StateMan.hpp"
 
+enum AssetID
+{
+    MAIN_FONT = 0
+};
+
 struct Context
 {
     std::unique_ptr<Engine::AssetMan> m_assets;
@@ -26,7 +31,7 @@ class Game
 {
 private:
     std::shared_ptr<Context> m_context;
-    const sf::Time TIME_PER_SECOND = sf::seconds(1.f/60.f);
+    const sf::Time TIME_PER_FRAME = sf::seconds(1.f/60.f);
 public : 
     Game();
     ~Game();
