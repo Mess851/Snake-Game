@@ -1,53 +1,56 @@
 # Snake-Game
 
 Este juego fue elaborado por:
--Ernesto Misael Silva Muñoz 22310168
--Harold Galaviz Bañuelos 22310176
++**Ernesto Misael Silva Muñoz 22310168**
++**Harold Galaviz Bañuelos 22310176**
 
 ![Snake Fondo](assets/images/SnakeFondo.jpg)
 
-##Snake
-*¿Qué es el juego de Snake?
-El juego de Snake es un clásico juego de arcade que se originó en la década de 1970. Fue popularizado por los teléfonos móviles Nokia en la década de 1990. El objetivo principal es controlar una serpiente en constante crecimiento dentro de un espacio limitado.
+## Snake
+Este es una representacion del famoso juego Snake realizado en c++ utilizando como editor de codigo Visual estudio code y como compilador Msys2, tambien se utilizo la libreria externa SFML.
 
-*¿Cómo se juega?
--Objetivo: El jugador controla una serpiente que se mueve por la pantalla. El objetivo es comer frutas dispersas por el área de juego para hacer crecer a la serpiente.
+### Jugabilidad
+Para jugar vas con seleccionar play y oprimir enter, el juego comenzara y tendras que ir comiendo las berenjenas para asi ir aumentando de tamaño
 
--Movimiento: La serpiente se mueve continuamente en una dirección específica. El jugador puede cambiar la dirección de la serpiente utilizando las teclas de dirección (arriba, abajo, izquierda, derecha).
+Los controles de la Serpiente son las flechitas y si llegas a colisionar con algun muro o tu propia cola perderas tu puntuacion
 
--Crecimiento y Pérdida: Cada vez que la serpiente consume una fruta, su longitud aumenta. Si la serpiente choca contra sí misma o contra los bordes de la pantalla, el juego termina.
+La puntuacion aparecera del lado superior izquierdo y por cada berenjena se sumara un punto.
 
--Puntuación: La puntuación se basa en la cantidad de frutas consumidas y, a menudo, se registra para compararla con puntuaciones anteriores o con otros jugadores.
+## Como ejecutar
+Para ejecutar el juego basta con escrbir dentro de la terminal de VScode:
 
-*Funcionamiento del juego
-El juego de Snake funciona mediante una cuadrícula o espacio de juego donde la serpiente se mueve. Algunos de los conceptos clave de su funcionamiento son:
+>make run
 
--Representación gráfica: El juego se presenta típicamente en una pantalla dividida en una cuadrícula, donde la serpiente y las frutas son representadas por sprites o imágenes simples.
+## Programas necesarios
 
--Algoritmo de movimiento: La serpiente se mueve de manera continua siguiendo una dirección específica. El jugador cambia esta dirección con las teclas de control. La serpiente crece cuando consume una fruta y disminuye la velocidad del juego a medida que crece.
+### Visual estudio code
+Descargar e instalar vscode en el soguiente enlace[Vscode.](https://code.visualstudio.com/)
 
--Detección de colisiones: El juego monitorea constantemente si la cabeza de la serpiente choca con su propio cuerpo o con los límites del área de juego. Cuando ocurre una colisión, el juego finaliza.
+### MSYS2 (Window)
+Instalar Msys2 usando el siguiente enlace [MSYS2(Windows)]:https://github.com/msys2/msys2-installer/releases/download/2023-05-26/msys2-x86_64-20230526.exe
 
--Generación de frutas: Las frutas aparecen aleatoriamente en la cuadrícula del juego. Cuando la serpiente come una fruta, se genera otra en una posición aleatoria.
+No modificar ninguna opcion al momento de instalacion o podrian variar las configuraciones.
 
-*Desarrollo del juego
-Para desarrollar un juego de Snake, se requiere:
+Una vez instalado es necesario agregar los siguientes directorios al path de windows y reiniciar.
 
--Lenguaje de programación: Puede ser desarrollado en diversos lenguajes como Python, JavaScript, C++, entre otros. En nuestro caso se uso C++.
+> C:\msys64\mingw64\bin
 
-Programas que se utilizaran:
+> C:\msys64\usr\bin
 
-[VisualEstudioCode]:https://code.visualstudio.com/
+### Github Desktop
+Puedes utilizar Github Desktop para clonar el repositorio o bien descargarlo desde el navegador[GithubDesktop]:https://desktop.github.com/
 
-[MSYS2(Windows)]:https://github.com/msys2/msys2-installer/releases/download/2023-05-26/msys2-x86_64-20230526.exe
 
-[GithutDesktop]:https://desktop.github.com/
+## Librerias Utilizadas (Msys2)
 
--Gestión de la lógica del juego: Se necesita código para manejar el movimiento de la serpiente, la detección de colisiones, la generación de frutas y el cálculo de puntuación.
+Ejecutar los siguientes comandos en la terminal de Msys2 para instalar las dependencias necesarias.
 
--Interfaz gráfica: La representación visual del juego y sus elementos (serpiente, frutas, fondo) es esencial para la experiencia del jugador.
+### Devtools
+Compiladores y herramientas necesarias para el desarrollo.
 
--Interactividad del usuario: Se deben implementar controles para permitir que el jugador cambie la dirección de la serpiente.
+https://code.visualstudio.com/docs/cpp/config-mingw
+> pacman -S --needed base-devel mingw-w64-x86_64-toolchain
 
-*Conclusión
-El juego de Snake es un clásico simple pero adictivo que ha mantenido su popularidad a lo largo de los años. Su jugabilidad directa y su fácil comprensión lo convierten en un excelente proyecto de desarrollo de juegos para principiantes y una opción divertida para entretenerse.
+### SFML
+https://packages.msys2.org/package/mingw-w64-x86_64-sfml
+> pacman -S mingw-w64-x86_64-sfml
