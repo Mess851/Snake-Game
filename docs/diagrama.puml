@@ -1,0 +1,24 @@
+@startuml name
+
+class AssetMan
+class Game
+class GameOver
+class GamePlay
+class MainMenu
+class PauseGame
+class Snake
+class State
+class StateMan
+
+
+MainMenu "1" *-- "1" Game
+Game "1" *-- "1" GamePlay
+Game "1" *-- "1" GameOver
+Game "1" o-- "1" PauseGame
+Game "1" o-- "1" StateMan
+Game "1" o-- "1" AssetMan
+StateMan "1" o-- "1" State
+GamePla "1" o-- "1" State
+GamePlay "1" o--  "1" Snake
+GameOver "1" o-- "1" State
+Snake "1" o-- "1" State
