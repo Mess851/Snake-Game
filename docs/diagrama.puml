@@ -53,11 +53,71 @@ class GamePlay{
     + Pause(): void
     + Start(): void
 }
-class MainMenu
-class PauseGame
-class Snake
-class State
-class StateMan
+class MainMenu {
+    - m_context: std::shared_ptr<Context>
+    - m_gameTitle: sf::Text
+    - m_playButton: sf::Text
+    - m_exitButton: sf::Text
+    - m_isPlayButtonSelected: bool
+    - m_isPlayButtonPressed: bool
+    - m_isExitButtonSelected: bool
+    - m_isExitButtonPressed: bool
+    + MainMenu(context: std::shared_ptr<Context>&)
+    + ~MainMenu()
+    + Init(): void override
+    + ProcessInput(): void override
+    + Update(deltaTime: const sf::Time&): void override
+    + Draw(): void override
+}
+class PauseGame {
+    - m_context: std::shared_ptr<Context>
+    - m_context: std::shared_ptr<Context>
+    + PauseGame(context: std::shared_ptr<Context>&)
+    + ~PauseGame()
+    + Init(): void
+    + ProcessInput(): void 
+    + Update(deltaTime: const sf::Time&): void
+    + Draw(): void
+}
+class Snake {
+    - m_body: std::list<sf::Sprite>
+    - m_head: std::list<sf::Sprite>::iterator
+    - m_tail: std::list<sf::Sprite>::iterator
+    + Snake()
+    + ~Snake()
+    + Init(texture: const sf::Texture&)
+    + Move(direction: const sf::Vector2f&)
+    + IsOn(other: const sf::Sprite&) const
+    + Grow(direction: const sf::Vector2f&)
+    + IsSelfIntersecting(): bool
+    + draw(target: sf::RenderTarget&, states: sf::RenderStates) const
+}
+class State {
+    + State()
+    + ~State()
+    + Init(): void
+    + ProcessInput(): void
+    + Update(deltaTime: const sf::Time&): void
+    + Draw(): void
+    + Pause(): void
+    + Start(): void
+}
+class StateMan {
+    - m_stateStack: std::stack<std::unique_ptr<State>>
+    - m_newState: std::unique_ptr<State>
+    - m_add: bool
+    - m_replace: bool
+    - m_remove: bool
+    - m_removeAll: bool
+    + StateMan()
+    + ~StateMan()
+    + Add(toAdd: std::unique_ptr<State>, replace: bool = false): void
+    + PopCurrent(): void
+    + PopAll(): void
+    + ProcessStateChange(): void
+    + GetCurrent(): std::unique_ptr<State>& 
+    + IsEmpty(): bool
+}
 
 
 MainMenu "1" *-- "1" Game
