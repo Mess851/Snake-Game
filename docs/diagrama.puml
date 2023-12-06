@@ -1,9 +1,58 @@
-@startuml name
+@startuml diagrama
 
-class AssetMan
-class Game
-class GameOver
-class GamePlay
+class AssetMan {
+    - m_textures: std::map<int, std::unique_ptr<sf::Texture>>
+    - m_fonts: std::map<int, std::unique_ptr<sf::Font>>
+    + AssetMan()
+    +~AssetMan()
+    + AddTexture(id: int, filePath: const std::string&, wantRepeated: bool = false): void
+    + AddFont(id: int, filePath: const std::string&): void
+    + GetTexture(id: int): const sf::Texture&
+    + GetFont(id: int): const sf::Font&
+    }
+class Game{
+    - m_context: std::shared_ptr<Context>
+    - TIME_PER_FRAME: const sf::Time
+    + Game()
+    + ~Game()
+    + Run() : void
+}
+class GameOver{
+    - m_context : std::shared_ptr<Context>
+    - m_gameOverTitle: sf::Text
+    - m_retryButton: sf::Text
+    - m_exitButton: sf::Text
+    - m_isRetryButtonSelected: bool
+    - m_isRetryButtonPressed : bool
+    - m_isExitButtonSelected : bool
+    - m_isExitButtonPressed : bool
+    + GameOver(context: std::shared_ptr<Context>&)
+    + ~GameOver()
+    + Init(): void 
+    + ProcessInput(): void
+    + Update(deltaTime: const sf::Time&): void
+    + Draw(): void 
+}
+class GamePlay{
+    - m_context: std::shared_ptr<Context>
+    - m_grass: sf::Sprite
+    - m_food: sf::Sprite
+    - m_walls: std::array<sf::Sprite, 4>
+    - m_snake: Snake
+    - m_scoreText: sf::Text
+    - m_score: int
+    - m_snakeDirection: sf::Vector2f
+    - m_elapsedTime: sf::Time
+    - m_isPaused: bool
+    + GamePlay(context: std::shared_ptr<Context>&)
+    + ~GamePlay()
+    + Init(): void
+    + ProcessInput(): void
+    + Update(deltaTime: const sf::Time&): void
+    + Draw(): void
+    + Pause(): void
+    + Start(): void
+}
 class MainMenu
 class PauseGame
 class Snake
